@@ -1,0 +1,2 @@
+- [comp.lang.c FAQs](https://c-faq.com/index.html)
+- [Clockwise/spiral rule for parsing C declaration](https://c-faq.com/decl/spiral.anderson.html)
