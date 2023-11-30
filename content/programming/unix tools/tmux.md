@@ -1,6 +1,6 @@
+Below, `prefix` refers to the keys you press to invoke a `tmux` command inside a `tmux` session. For me, it's `Ctrl+A`. You can set it in your `.tmux.conf`, see below.
 #### Sessions
 ```
-
 tmux                       -- create new session
 tmux new -s name           -- create new named session
 tmux ls                    -- list sessions
@@ -14,7 +14,6 @@ tmux kill-session -t name  -- kill specific session
 
 #### Windows
 ```
-
 prefix c                -- create window
 prefix &                -- kill window (confirm with y)
 C-d or exit             -- kill pane/window (no confirmation)
@@ -31,7 +30,6 @@ prefix w                -- select window interactively
 
 #### Panes
 ```
-
 prefix %      -- split pane vertically
 prefix "      -- split pane horizontally
 prefix x      -- close pane (confirm with y)
@@ -41,19 +39,16 @@ prefix arrow  -- navigate to pane
 
 #### Configuration
 ```
-
 :set -g mouse on/off  -- turn on/off scrolling with mouse
 ```
 
 #### Other
 ```
-
 :source-file ~/.tmux.conf  -- reload conf file
 ```
 
 Inside `.tmux.conf`:
 ```
-
 set-option -g prefix C-a                   -- set prefix to C-a
 set -g default-terminal "screen-256color"  -- explicitly set 256 color support
 ```
@@ -61,7 +56,6 @@ set -g default-terminal "screen-256color"  -- explicitly set 256 color support
 #### Plugins
 First install [tmux plugin manager](https://github.com/tmux-plugins/tpm). Then add desired plugins to your `.tmux.conf`:
 ```shell
-
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
@@ -78,7 +72,6 @@ run '~/.tmux/plugins/tpm/tpm'
 
 Key bindings:
 ```
-
 prefix I      -- install new plugins and refresh tmux environment
 prefix U      -- update plugins
 prefix alt-u  -- uninstall plugins that are removed from .tmux.conf
