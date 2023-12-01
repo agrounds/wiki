@@ -1,8 +1,7 @@
 ---
 title: Coroutines Cheatsheet
 ---
-
-# Run Several Jobs in Parallel and Track Failures
+# Parallel Jobs, Tolerating Failure
 
 Example: we've got several requests we need to make to another service. Each is for a task that is independent of the others, so even if one request fails we'd like the others to be tried. However, if one or more fail we'd like to log the failures and throw at least one of them so it's reflected to the caller of our service and our logging system.
 
