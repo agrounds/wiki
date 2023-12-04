@@ -18,3 +18,11 @@
 #### Mocking requests
 - `pytest-responses`
 - `pytest-betamax`
+
+# Terminal Graphics
+### BadAss Terminal GRaphics Library (batgrl)
+- [GitHub repo](https://github.com/salt-die/batgrl)
+- [Visualizations for Advent of Code problems](https://github.com/salt-die/Advent-of-Code)
+
+Lava droplet example, from AoC 2022, day 18
+![[lava_droplet.gif]]
