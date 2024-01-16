@@ -18,7 +18,7 @@ import grpc
 from google.protobuf import empty_pb2
 from google.protobuf.json_format import MessageToDict
 
-from com.agrounds.dosomething.v1 import do_something_pb2_grpc
+from com.groundsfam.dosomething.v1 import do_something_pb2_grpc
 
 
 class DoSomethingServiceServicer(do_something_pb2_grpc.DoSomethingServiceServicer):
@@ -100,22 +100,17 @@ def main():
     process_count = multiprocessing.cpu_count()
     processes = []
     for i in range(process_count):
-        if i == 0:
-            p = multiprocessing.Process(
-                target=serve,
-                args=(work_queue, update_queue)
-            )
-        else:
-            p = multiprocessing.Process(
-                target=worker,
-                args=(work_queue, update_queue)
-            )
+        p = multiprocessing.Process(
+            target=serve if i == 0 else worker,
+            args=(work_queue, update_queue)
+        )
         # marking the process as daemon means it cannot spawn child
         # processes, and it will be killed when the parent process ends
         p.daemon = True
         p.start()
         processes.append(p)
 
+    # block until all processes have ended
     for p in processes:
         p.join()
 
