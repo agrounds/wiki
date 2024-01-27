@@ -47,3 +47,5 @@ Plug 'KeitaNakamura/tex-conceal.vim'
 ```
 
 9. Add `UltiSnips` snippets to your heart's content in your `~/.vim/UltiSnips/tex.snippets` file. I used [this guide](https://castel.dev/post/lecture-notes-1/) to learn about and develop snippets that I use.
+
+#shell #TeX

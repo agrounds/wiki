@@ -40,3 +40,5 @@
 
 Lava droplet example, from AoC 2022, day 18
 ![[lava_droplet.gif]]
+
+#python

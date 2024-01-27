@@ -118,3 +118,5 @@ class TestFile1:
         mock_some_class.assert_has_calls(expected_calls, any_order=True)
         mock_some_class.return_value.doit.assert_called_once()
 ```
+
+#python

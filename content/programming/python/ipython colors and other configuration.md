@@ -47,3 +47,5 @@ You can also change config values on the fly for quick experimentation, for inst
 ```python
 %config TerminalInteractiveShell.highlighting_style = 'monokai'
 ```
+
+#python #shell

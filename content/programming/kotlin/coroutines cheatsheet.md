@@ -43,3 +43,5 @@ suspend fun callExternalService(usefulId: String) {
     // make some HTTP call, throwing an exception if it fails
 }
 ```
+
+#kotlin #coroutines

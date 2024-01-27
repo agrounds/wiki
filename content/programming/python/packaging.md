@@ -41,3 +41,5 @@ apps are exposed on your $PATH at /home/user/.local/bin
                 ||----w |
                 ||     ||
 ```
+
+#python
