@@ -15,6 +15,6 @@ Makes it super easy to share files on a local network, for instance. Navigate to
 python -m http.server 8000
 ```
 
-Then just go to `http://hostname:80000` to see the shared folder. If you're on MacOS, you can see your hostname in System Settings > Sharing > Hostname (e.g. `My-MacBook-Pro.local`).
+Then just go to `http://hostname:8000` to see the shared folder. If you're on MacOS, you can see your hostname in System Settings > Sharing > Hostname (e.g. `My-MacBook-Pro.local`).
 
 #python
