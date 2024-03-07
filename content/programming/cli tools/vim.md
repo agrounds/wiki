@@ -19,6 +19,8 @@ set background=dark  " fix colors (e.g. when using tmux or screen)
 
 # Cheatsheet
 
-```
-"*y - yank selection into clipboard
-```
+| command | description |
+| ---- | ---- |
+| `"*y` | yank selection into clipboard |
+| `gg=G` | fix indentation for entire file |
+| `''` | jump back to where you were (not sure how this is implemented) |
