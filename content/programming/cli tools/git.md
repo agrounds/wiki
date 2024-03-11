@@ -29,6 +29,8 @@ This config sets:
   added = green bold
   changed = yellow bold
   untracked = red bold
+[pager]
+  branch = false
 [alias]
   co = checkout
   cob = checkout -b
