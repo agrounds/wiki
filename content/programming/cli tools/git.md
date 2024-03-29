@@ -54,3 +54,19 @@ This config sets:
 ### Alias explanations
 - `git defbranch` returns the default branch for this repo on origin, usually `main` or `master`
 - `git done branch-name`  is used when a feature branch is merged into `main`. It deletes the feature branch and `git pull`s the `main` branch to update it.
+
+# Tab completion
+
+I've found that the tab completion that comes with `zsh` by default is sometimes slow and overly verbose. It also sometimes breaks the tab completion used by function-based git aliases, e.g.
+
+```
+done = "!f() { : git checkout ; db=`git defbranch`; git co $db && git branch -d -r origin/$1 && git del $1 && git fetch origin $db && git merge origin/$db; }; f"
+```
+
+Since I'm an oh-my-zsh user, I fixed this by using the `gitfast` plugin, which replaces `zsh`'s git completions and, under the hood, uses `bash`'s completions instead.
+
+In my `~/.zshrc`:
+
+```shell
+plugins=(... gitfast)
+```
