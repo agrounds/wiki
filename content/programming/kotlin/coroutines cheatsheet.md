@@ -34,8 +34,8 @@ suspend fun main() {
             logger.error(error) {
                 "Error while calling external service. Id = ${context?.usefulId}"
             }
-            throw errors.first().let { (_, error) -> error }
         }
+        throw errors.first().let { (_, error) -> error }
     }
 }
 
