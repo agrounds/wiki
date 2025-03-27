@@ -10,6 +10,6 @@ This wiki is mostly for myself, but anyone who's curious about it is welcome to 
 ### Some interesting pages
 
 - [[coroutines cheatsheet|Kotlin coroutines cheatsheet]]
-- [[python/grpc|How to implement a truly parallel grpc server in python]]
+- [[programming/python/grpc|How to implement a truly parallel grpc server in python]]
 - [[VimTeX + Zathura setup on MacOS|Working VimTeX + Zathura setup on MacOS]]
 - [[groundsfam.com DNS setup|How I set up DNS for my self-hosted services]]
