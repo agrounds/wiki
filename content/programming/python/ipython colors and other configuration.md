@@ -1,4 +1,4 @@
-Starting with IPython version 8, the default colors for IPython are *horrible*. Fortunately we can customize our IPython profile to fix them.
+In recent version of IPython, the default colors are *horrible*. Fortunately we can customize our IPython profile to fix them.
 
 # Manage profiles
 
@@ -7,33 +7,40 @@ Check if you have an IPython profile and create one if needed with these command
 - `ipython profile list`
 - `ipython profile create`
 
+Your profile will contain an `ipython_config.py` file. Configure it as follows:
+
 # Use vi editing mode
 ```python
-# Search for and edit this line
+# enable vi editing mode
 c.TerminalInteractiveShell.editing_mode = 'vi'
+# eliminate the long delay when exiting insert mode
+c.TerminalInteractiveShell.emacs_bindings_in_vi_insert_mode = False
 ```
 
 # Fix colors in profile configuration
 
-Open up `$(ipython profile locate)/ipython_config.py` for editing and make these changes
 ```python
-from IPython.core.ultratb import VerboseTB
-import IPython
+from copy import deepcopy
 
-# search for these options and edit them
-c.TerminalInteractiveShell.highlighting_style = 'material'
+from IPython.core.ultratb import VerboseTB
+from IPython.utils.PyColorize import linux_theme, theme_table
+
+# in ipython 9+, highlighting_style is deprecated in favor of themes
+# unfortunately, there are not a lot of available themes at present
+# instead, we create a one-dark theme ourselves
+onedark = deepcopy(linux_theme)
+onedark.base 'one-dark'
+theme_table['one-dark'] = onedark
+c.InteractiveShell.colors = 'one-dark'
+
+# enable 24bit colors
 c.TerminalInteractiveShell.true_color = True
 
 # add this to the bottom of the file
 # it replaces the awful ANSI yellow background with
 # bold underlined text instead
-VerboseTB._tb_highlight = 'bold underline'
-```
-
-# Remove long delay to exit insert mode
-```python
-# Add this line somewhere in ipython_config.py
-c.TerminalInteractiveShell.emacs_bindings_in_vi_insert_mode = False
+VerboseTB.tb_highlight = 'bold underline'
+VerboseTB.tb_highlight_style = 'default'
 ```
 
 # Debugging
@@ -45,7 +52,7 @@ In an IPython session, you can run this magic to check configuration values
 
 You can also change config values on the fly for quick experimentation, for instance
 ```python
-%config TerminalInteractiveShell.highlighting_style = 'monokai'
+%config TerminalInteractiveShell.colors = 'linux'
 ```
 
 #python #shell
